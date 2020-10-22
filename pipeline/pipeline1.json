@@ -53,6 +53,22 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Waitforsec",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "Copyfromsqltoblob",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
 			}
 		],
 		"annotations": [],
